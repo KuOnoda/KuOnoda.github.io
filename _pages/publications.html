@@ -23,7 +23,16 @@ author_profile: true
         <h2>{{ category[1].title }}</h2><hr />
         {% assign title_shown = true %}
       {% endunless %}
-      {% include archive-single.html %}
+      <div class="publication-list__item">
+        <p>{{ post.citation }}</p>
+        <p><strong>{{ post.title }}</strong></p>
+        <p><em>{{ post.venue }}</em>.</p>
+        <p class="publication-list__links">
+          {% if post.paperurl %}[<a href="{{ post.paperurl }}">arxiv</a>]{% endif %}
+          {% if post.codeurl %} [<a href="{{ post.codeurl }}">code</a>]{% endif %}
+          {% if post.websiteurl %} [<a href="{{ post.websiteurl }}">website</a>]{% endif %}
+        </p>
+      </div>
     {% endfor %}
   {% endfor %}
 {% else %}

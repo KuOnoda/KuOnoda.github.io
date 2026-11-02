@@ -7,58 +7,34 @@ redirect_from:
   - /resume
 ---
 
-{% include base_path %}
+[Download the full CV (PDF)](/files/Ku_Onoda_CV.pdf)
 
-Education
-======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+## Education
 
-Work experience
-======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+- **The University of Tokyo**, M.S. in Technology Management for Innovation, Graduate School of Engineering, Apr 2025 - Mar 2027 (expected)
+- **The University of Tokyo**, B.Eng. in Systems Innovation, Faculty of Engineering, Apr 2022 - Mar 2025 (transfer admission)
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+## Experience
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+- **Third Intelligence**, Research Scientist Intern, Feb 2026 - Present
+- **Matsuo Institute**, Machine Learning Engineer Intern, Jan 2025 - Present
 
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+## Peer-reviewed publications
+
+- **Ku Onoda**, Paavo Parmas, Hiroki Furuta, Soichiro Nishimori, Yuta Oshima, Shohei Taniguchi, and Yutaka Matsuo. "Multi-Axis Max@K Reinforcement Learning for Representative Diversity in Text-to-Image Generation." *IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)*, 2027. Accepted. [Paper](https://arxiv.org/abs/2607.14962) · [Code](https://github.com/KuOnoda/multi-axis-maxk)
+- **Ku Onoda**, Paavo Parmas, Manato Yaguchi, and Yutaka Matsuo. "Does 'Do Differentiable Simulators Give Better Policy Gradients?' Give Better Policy Gradients?" *International Conference on Learning Representations (ICLR)*, 2026. [Paper](https://arxiv.org/abs/2604.18161)
+
+## Preprint
+
+- Yuta Oshima\*, **Ku Onoda\***, Yusuke Iwasawa, Masahiro Suzuki, Yutaka Matsuo, and Hiroki Furuta. "AutoRef: Harness Optimization for Agentic Multi-Reference Image Generation." arXiv preprint, 2026. [Paper](https://arxiv.org/abs/2609.35530) · [Code](https://github.com/KuOnoda/AutoRef)<br>
+  \* Equal contribution.
+
+## Awards and scholarships
+
+- Student Incentive Award, 39th Annual Conference of the Japanese Society for Artificial Intelligence (JSAI), General Session, Oral Presentation Division, May 2025
+- JGC-S Scholarship Foundation grant scholarship, Apr 2025 - Mar 2026
+
+## Beyond research
+
+- Competitive rowing for ten years
+- Japan U23 National Team, 2023 World Rowing Under 23 Championships
