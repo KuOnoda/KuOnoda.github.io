@@ -247,6 +247,30 @@
   }
 }
 
+// Inline SVGs keep profile links visible even when external icon fonts fail to load.
+.profile-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.05em;
+  height: 1.05em;
+  margin-right: 0.55em;
+  vertical-align: -0.14em;
+  color: inherit;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+  }
+}
+
+.profile-icon--brand {
+  width: 1em;
+  height: 1em;
+}
+
 .author__urls {
   display: none;
   position: absolute;
