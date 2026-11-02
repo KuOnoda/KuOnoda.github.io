@@ -260,6 +260,11 @@
     }
   }
 
+  // Keep the persistent theme control clear of the overflow menu on narrow screens.
+  button:not(.hidden) ~ .visible-links #theme-toggle {
+    padding-right: 3rem;
+  }
+
   .hidden-links {
     position: absolute;
     top: 100%;
