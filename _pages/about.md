@@ -9,6 +9,8 @@ redirect_from:
 
 I am an M.S. student in Technology Management for Innovation at the Graduate School of Engineering, The University of Tokyo, and a member of the [Matsuo-Iwasawa Laboratory](https://weblab.t.u-tokyo.ac.jp/en/).
 
+My research focuses on **self-improving agent systems and reinforcement learning**.
+
 ## Selected research
 
 - **Multi-Axis Max@K Reinforcement Learning** introduces a group-based reinforcement learning objective that improves target-mode coverage in text-to-image generation. Accepted at WACV 2027. [[arxiv](https://arxiv.org/abs/2607.14962)] [[code](https://github.com/KuOnoda/multi-axis-maxk)]
