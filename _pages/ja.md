@@ -9,15 +9,15 @@ author_profile: true
 
 ## プロフィール
 
-小野田 空羽（Ku Onoda）です。東京大学大学院工学系研究科技術経営戦略学専攻の修士課程に在籍し、[松尾・岩澤研究室](https://weblab.t.u-tokyo.ac.jp/)で研究しています。
+東京大学大学院工学系研究科技術経営戦略学専攻 修士課程2年、[松尾・岩澤研究室](https://weblab.t.u-tokyo.ac.jp/)所属。
 
-## 研究関心
+## 研究
 
-自己改善型エージェントシステム（self-improving agent systems）と強化学習（reinforcement learning）を研究しています。
+自己改善するエージェントシステムと強化学習に関心があります。
 
 ## 研究成果
 
-論文の一覧は [Publications](/publications/)、公開コードとプロジェクトは [Projects](/projects/) をご覧ください。論文タイトルは英語原題で掲載しています。
+英語論文は [Publications](/publications/)、公開コードは [Projects](/projects/) にまとめています。
 
 ## 国内会議
 
@@ -37,6 +37,6 @@ author_profile: true
 
 詳しい経歴は [CV](/cv/) をご覧ください。
 
-## その他の活動
+## その他
 
-競技ボートに10年間取り組んでいます。2023年には日本U23代表として世界U23ボート選手権に出場しました。
+ボート競技を10年間続けており、2023年にはU23日本代表として世界U23ボート選手権に出場しました。
