@@ -41,11 +41,22 @@ test('opt-in loads once, correct ID, sanitized URLs and advertising disabled', (
   assert.equal(s.document.head.children[0].src, 'https://www.googletagmanager.com/gtag/js?id=G-MTJW4CW9Y2');
   const calls = s.window.dataLayer.map(a => Array.from(a));
   const config = calls.find(a => a[0] === 'config')[2];
-  assert.equal(config.send_page_view, false); assert.equal(config.allow_google_signals, false);
+  assert.equal(config.send_page_view, true); assert.equal(config.allow_google_signals, false);
   assert.equal(config.allow_ad_personalization_signals, false);
   assert.equal(config.page_location, 'https://kuonoda.github.io/publications/');
   assert.equal(config.page_referrer, 'https://example.org');
-  assert.equal(calls.filter(a => a[0] === 'event').length, 1);
+  assert.equal(calls.filter(a => a[0] === 'config' && a[2].send_page_view).length, 1);
+  assert.equal(calls.filter(a => a[0] === 'event').length, 0);
+  const globalIndex = calls.findIndex(a => a[0] === 'set');
+  const initIndex = calls.findIndex(a => a[0] === 'js');
+  const configIndex = calls.findIndex(a => a[0] === 'config');
+  assert.ok(globalIndex >= 0 && globalIndex < initIndex && initIndex < configIndex);
+  const defaults = calls[globalIndex][1];
+  assert.equal(defaults.page_location, config.page_location);
+  assert.equal(defaults.page_referrer, config.page_referrer);
+  assert.equal(defaults.page_title, config.page_title);
+  assert.equal(defaults.allow_google_signals, false);
+  assert.equal(defaults.allow_ad_personalization_signals, false);
   assert.ok(!JSON.stringify(calls).includes('private'));
 });
 test('persisted consent/rejection and rejection followed by allowance', () => {

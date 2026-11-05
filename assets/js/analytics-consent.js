@@ -34,19 +34,22 @@
       analytics_storage: "granted", ad_storage: "denied",
       ad_user_data: "denied", ad_personalization: "denied"
     });
-    gtag("js", new Date());
     var referrer = "";
     try { referrer = document.referrer ? new URL(document.referrer).origin : ""; } catch (e) { /* No referrer. */ }
     var page = window.location.origin + window.location.pathname;
+    // Apply safe defaults before initialization, including automatic tag events.
+    gtag("set", {
+      page_location: page, page_referrer: referrer, page_title: "Academic website",
+      allow_google_signals: false, allow_ad_personalization_signals: false
+    });
+    gtag("js", new Date());
+    // Use the config-generated page view only; never also send a manual page_view.
     gtag("config", id, {
-      send_page_view: false, allow_google_signals: false,
+      send_page_view: true, allow_google_signals: false,
       allow_ad_personalization_signals: false,
       page_location: page, page_referrer: referrer,
       page_title: "Academic website", cookie_expires: 7776000,
       cookie_update: false, cookie_domain: window.location.hostname
-    });
-    gtag("event", "page_view", {
-      page_location: page, page_referrer: referrer, page_title: "Academic website"
     });
     var tag = document.createElement("script");
     tag.async = true;
