@@ -91,11 +91,13 @@ test('withdrawal in another tab stops an active tag', () => {
   assert.equal(s.reloads, 1); assert.equal(s.window['ga-disable-G-MTJW4CW9Y2'], true);
 });
 
-test('collection pause blocks Google loading even after consent and preserves settings UI', () => {
-  const s = setup({choice:'granted', paused:true});
+test('collection pause disables Google, clears old cookies and creates no consent UI', () => {
+  const s = setup({choice:'granted', paused:true, cookies:'_ga=123; theme=dark'});
   assert.equal(s.document.head.children.length, 0);
   assert.equal(s.window.dataLayer, undefined);
-  s.settings.handlers.click(); s.click('Allow analytics');
-  assert.equal(s.document.head.children.length, 0);
-  assert.equal(s.window.dataLayer, undefined);
+  assert.equal(s.window['ga-disable-G-MTJW4CW9Y2'], true);
+  assert.equal(s.panel, undefined);
+  assert.equal(s.settings.handlers.click, undefined);
+  assert.equal(s.removed.length, 3);
+  assert.ok(s.removed.every(c => c.startsWith('_ga=') && c.includes('Max-Age=0')));
 });

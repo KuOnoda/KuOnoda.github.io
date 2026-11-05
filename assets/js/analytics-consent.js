@@ -26,6 +26,12 @@
       });
     });
   }
+  // Paused mode removes old analytics cookies without showing a consent prompt.
+  if (!collectionEnabled) {
+    window["ga-disable-" + id] = true;
+    clearCookies();
+    return;
+  }
   function gtag() { window.dataLayer.push(arguments); }
   function start() {
     if (!collectionEnabled || loaded || privacySignal || choice !== "granted") return;
