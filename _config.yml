@@ -157,9 +157,9 @@ social:
 
 # Analytics
 analytics:
-  provider               :  "false" # false (default), "google", "google-universal", "google-analytics-4", "custom"
+  provider               :  "google-analytics-4" # false (default), "google", "google-universal", "google-analytics-4", "custom"
   google:
-    tracking_id          :
+    tracking_id          : "G-MTJW4CW9Y2"
 
 
 # Reading Files
@@ -168,6 +168,7 @@ include:
   - _pages
   - files
 exclude:
+  - tests
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache
