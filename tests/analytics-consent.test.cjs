@@ -17,7 +17,7 @@ function setup(options = {}) {
   let cookie = options.cookies || '', reloads = 0;
   const removed = [], storage = new Map();
   if (options.choice) storage.set('analytics-consent-v1', options.choice);
-  const document = { currentScript: { dataset: { origin: 'https://kuonoda.github.io', measurementId: 'G-MTJW4CW9Y2' } },
+  const document = { currentScript: { dataset: { origin: 'https://kuonoda.github.io', collectionEnabled: options.paused ? 'false' : 'true', measurementId: 'G-MTJW4CW9Y2' } },
     referrer: 'https://example.org/private?q=person@example.org#secret', head: element('head'), body: element('body'),
     createElement: element, getElementById: () => settings,
     get cookie() { return cookie; }, set cookie(value) { removed.push(value); } };
@@ -89,4 +89,13 @@ test('blocked storage fails closed but allows a one-page explicit choice', () =>
 test('withdrawal in another tab stops an active tag', () => {
   const s = setup({choice:'granted'}); s.window.handlers.storage({key:'analytics-consent-v1', newValue:'denied'});
   assert.equal(s.reloads, 1); assert.equal(s.window['ga-disable-G-MTJW4CW9Y2'], true);
+});
+
+test('collection pause blocks Google loading even after consent and preserves settings UI', () => {
+  const s = setup({choice:'granted', paused:true});
+  assert.equal(s.document.head.children.length, 0);
+  assert.equal(s.window.dataLayer, undefined);
+  s.settings.handlers.click(); s.click('Allow analytics');
+  assert.equal(s.document.head.children.length, 0);
+  assert.equal(s.window.dataLayer, undefined);
 });

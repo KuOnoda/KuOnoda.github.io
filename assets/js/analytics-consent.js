@@ -7,6 +7,8 @@
   if (!/^G-[A-Z0-9]+$/.test(id || "")) return;
   var key = "analytics-consent-v1";
   var loaded = false;
+  // Keep collection paused until the remote Google tag configuration is verified.
+  var collectionEnabled = script.dataset.collectionEnabled === "true";
   var settings = document.getElementById("analytics-settings");
   var privacySignal = navigator.globalPrivacyControl === true ||
     navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" ||
@@ -26,7 +28,7 @@
   }
   function gtag() { window.dataLayer.push(arguments); }
   function start() {
-    if (loaded || privacySignal || choice !== "granted") return;
+    if (!collectionEnabled || loaded || privacySignal || choice !== "granted") return;
     loaded = true;
     window["ga-disable-" + id] = false;
     window.dataLayer = window.dataLayer || [];
