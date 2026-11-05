@@ -1,3 +1,5 @@
-<!-- start custom analytics snippet -->
-
-<!-- end custom analytics snippet -->
+{% comment %}Keep Google's loader disabled and remove cookies from its earlier test.{% endcomment %}
+{% include analytics-providers/google-analytics-4.html %}
+{% if jekyll.environment == "production" %}
+<script defer src="{{ '/assets/js/private-pageviews.js' | relative_url }}" data-origin="{{ site.url }}" data-endpoint="https://kuonoda.goatcounter.com/count" data-path="{{ page.url | escape }}"></script>
+{% endif %}
